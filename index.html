@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+  <script src="src/data.js"></script>
+  <script src="src/Songs.js"></script>
+  <script src="src/PlayerView.js"></script>
+  <script src="src/LibraryView.js"></script>
+  <script src="src/LibraryEntryView.js"></script>
+  <script src="src/PlaylistView.js"></script>
+  <script src="src/PlaylistEntryView.js"></script>
+  <script>
+    $(function(){
+      var songs = new Songs();
+      songs.reset(data);
+
+      var player = new PlayerView({collection: songs});
+      var library = new LibraryView({collection: songs});
+      var playlistView = new PlaylistView({collection: songs});
+
+      $("#thePlayer").append(player.render());
+      $("#thePlaylist").append(playlistView.render());
+      $("#theLibrary").append(library.render());
+
+    });
+  </script>
+</head>
+<body>
+    <div id="leftContainer">
+      <div id="playGroup">
+        <div id="thePlayer"></div>
+        <div id="thePlaylist"></div>
+      </div>
+    </div>
+    <div id="rightContainer">
+      <div id="topright"><h2>Library</h2></div>
+      <div id="bottomright">
+        <div id="theLibrary"></div>
+      </div>  
+    </div>
+</body>
+</html>

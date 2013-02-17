@@ -1,0 +1,51 @@
+body {
+    font-family: "Varela Round";
+    color: #555;
+    margin:0;
+}
+
+#leftContainer{
+	float:left;
+	padding:5px;
+	width:45%;
+	overflow: hidden;
+	position:fixed;
+	padding:10px;
+}
+
+#rightContainer{
+	float: right;
+	background-color: #f5f5f5;
+	padding:97px 10px 5px 20px;
+	width:50%;
+	height:1000px;
+	min-height: 100%;
+	overflow: auto;
+}
+
+#playGroup{
+	width:400px;
+	float:right;
+	padding-top:51px;
+}
+
+#thePlayer{
+	float:right;
+}
+
+#thePlaylist{
+	float:right;
+	text-align:right;
+}
+
+td{
+	padding:3px;
+}
+
+#leftContainer td{
+	padding:6px;
+}
+
+.tdwidth{
+	width:185px;
+}
